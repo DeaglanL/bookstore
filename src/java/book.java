@@ -14,5 +14,13 @@ public class book {
     public String getAuthor() {
         return author;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 }
 

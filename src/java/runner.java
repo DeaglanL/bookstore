@@ -14,6 +14,18 @@ public class runner {
 
         bookStore.printContents();
 
+        System.out.println("\n \n Changing the hobbit \n \n");
+
+        bookStore.ammendBook(2, true, "The return of the king");
+
+        bookStore.printContents();
+
+        System.out.println("\n \n Removing all \n \n");
+
+        bookStore.removeAll();
+
+        bookStore.printContents();
+
 
     }
 }
