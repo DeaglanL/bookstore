@@ -1,5 +1,8 @@
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,6 +58,17 @@ public class bookService {
 
         return "Something broke";
 
+    }
+
+    public void convertJsonToMap(String json)
+    {
+        ObjectMapper om = new ObjectMapper();
+
+        try {
+           storeContents = om.readValue(json, new TypeReference<Map<Integer,Object>>(){});
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
