@@ -22,5 +22,10 @@ public class book {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    @Override
+    public String toString() {
+        return "\n Title: " + name + "\n Author: " + author;
+    }
 }
 

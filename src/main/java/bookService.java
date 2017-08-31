@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import org.json.simple.JSONValue;
 
 public class bookService {
     private Map<Integer, book> storeContents = new HashMap<Integer, book>();
@@ -43,7 +44,10 @@ public class bookService {
         }
     }
 
+    public String convertToJson(){
+       return JSONValue.toJSONString(storeContents);
+
+    }
+
 }
 
-
-//remove all

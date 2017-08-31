@@ -6,6 +6,8 @@ public class runner {
         bookStore.addBook(1, "Of mice and men", "John Steinbeck");
         bookStore.addBook(2, "The hobbit", "JRR Tolkien");
 
+        System.out.println(bookStore.convertToJson());
+
         bookStore.printContents();
 
         System.out.println("\n \n Removing of mice and men \n \n");
@@ -26,7 +28,7 @@ public class runner {
 
         bookStore.printContents();
 
-
+        System.out.println(bookStore.convertToJson());
     }
 }
 
