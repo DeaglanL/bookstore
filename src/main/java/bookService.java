@@ -1,6 +1,7 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.HashMap;
 import java.util.Map;
-import org.json.simple.JSONValue;
 
 public class bookService {
     private Map<Integer, book> storeContents = new HashMap<Integer, book>();
@@ -45,7 +46,14 @@ public class bookService {
     }
 
     public String convertToJson(){
-       return JSONValue.toJSONString(storeContents);
+       ObjectMapper om = new ObjectMapper();
+        try {
+            return om.writeValueAsString(storeContents);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return "Something broke";
 
     }
 
