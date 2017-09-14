@@ -10,9 +10,9 @@ public class bookService {
     private Map<Integer, book> storeContents = new HashMap<Integer, book>();
 
 
-    public void addBook(Integer key, String name , String author )
+    public void addBook(Integer key, String id, String name , String author )
     {
-        book newBook = new book(name, author);
+        book newBook = new book(id, name, author);
         storeContents.put(key, newBook);
     }
 

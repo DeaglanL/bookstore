@@ -1,8 +1,25 @@
+
+import com.sun.istack.internal.NotNull;
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name="book")
 public class book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false,unique = true)
+    private String id;
+    @NotNull
+    @Column(name="Title", length = 255, nullable = false)
     private String name;
+    @NotNull
+    @Column(name="Author", length = 255, nullable = false)
     private String author;
 
-    public book(String name, String author){
+    public book(String id, String name, String author){
+        this.id = id;
         this.name = name;
         this.author = author;
     }
